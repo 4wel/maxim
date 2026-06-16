@@ -3,447 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Світла пам'ять — [Ім'я Брата]</title>
-  <meta name="description" content="Меморіальний сайт про життя, творчість і пам'ять [Ім'я Брата]." />
-  <style>
-    :root {
-      --bg: #f6f3ef;
-      --surface: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --accent: #6b5b4b;
-      --accent-soft: #ece6df;
-      --max: 1120px;
-      --shadow: 0 10px 30px rgba(0,0,0,0.06);
-      --radius: 22px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(180deg, #f8f5f1 0%, #f5f2ee 100%);
-      color: var(--text);
-      line-height: 1.65;
-    }
-
-    a { color: inherit; }
-
-    .container {
-      width: min(calc(100% - 32px), var(--max));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(10px);
-      background: rgba(246, 243, 239, 0.88);
-      border-bottom: 1px solid rgba(107, 114, 128, 0.12);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 14px 0;
-    }
-
-    .brand {
-      font-size: 14px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-size: 15px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover { color: var(--text); }
-
-    .hero {
-      padding: 72px 0 44px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-main {
-      padding: 42px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 13px;
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      margin: 0 0 16px;
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      font-weight: 750;
-    }
-
-    .subtitle {
-      margin: 0 0 12px;
-      font-size: 20px;
-      color: var(--muted);
-    }
-
-    .hero-text {
-      font-size: 17px;
-      max-width: 760px;
-    }
-
-    .hero-side {
-      overflow: hidden;
-      min-height: 420px;
-      position: relative;
-      background: #ddd9d5;
-    }
-
-    .hero-side img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-placeholder {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #4b5563;
-      padding: 24px;
-      font-size: 16px;
-      background: linear-gradient(135deg, #dfd8d1, #cfc5bc);
-    }
-
-    section {
-      padding: 22px 0;
-    }
-
-    .section-head {
-      margin-bottom: 18px;
-    }
-
-    .section-head h2 {
-      margin: 0 0 6px;
-      font-size: clamp(26px, 3.5vw, 38px);
-      letter-spacing: -0.02em;
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .story {
-      padding: 30px;
-    }
-
-    .story p { margin-top: 0; }
-
-    .quote {
-      margin-top: 20px;
-      padding: 18px 20px;
-      border-left: 4px solid var(--accent);
-      background: #faf7f3;
-      border-radius: 14px;
-      color: #374151;
-      font-style: italic;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 14px;
-    }
-
-    .timeline-item {
-      padding: 22px;
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 20px;
-      align-items: start;
-    }
-
-    .timeline-date {
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .work-card {
-      padding: 26px;
-    }
-
-    .work-card h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 24px;
-    }
-
-    .work-card p {
-      color: var(--muted);
-      margin-top: 0;
-    }
-
-    .work-card ul {
-      padding-left: 18px;
-      margin: 0;
-    }
-
-    .work-card li + li { margin-top: 8px; }
-
-    .poem {
-      white-space: pre-line;
-      background: #faf7f3;
-      border-radius: 16px;
-      padding: 22px;
-      color: #374151;
-      margin-top: 16px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .gallery-item {
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      background: linear-gradient(135deg, #ded6ce, #cabeb4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #4b5563;
-      padding: 16px;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .footer {
-      padding: 42px 0 56px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .footer-box {
-      padding: 24px;
-    }
-
-    .small {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .btn-row {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 22px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 16px;
-      border-radius: 999px;
-      text-decoration: none;
-      border: 1px solid var(--line);
-      background: #fff;
-      color: var(--text);
-      transition: 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow);
-    }
-
-    .btn.primary {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-
-    @media (max-width: 920px) {
-      .hero-grid,
-      .grid-2,
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .hero-side { min-height: 320px; }
-      .hero-main { padding: 28px; }
-    }
-  </style>
+  <title>Максим Михайленко</title>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Меморіальний сайт про життя, творчість і пам'ять [Максим Михайленко]." />
+  
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-      <div class="brand">Світла пам'ять</div>
+      <div class="brand">Максим Михайленко</div>
       <nav class="nav-links">
-        <a href="#about">Про нього</a>
         <a href="#timeline">Життєвий шлях</a>
         <a href="#works">Творчість</a>
         <a href="#gallery">Світлини</a>
-        <a href="#memory">Пам'ять</a>
-      </nav>
+              </nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="card hero-main">
-          <span class="eyebrow">Меморіальний сайт</span>
-          <h1>[Ім'я та прізвище брата]</h1>
-          <p class="subtitle">[Роки життя] • поет, художник, автор, воїн</p>
-          <div class="hero-text">
-            Це простір пам'яті про людину, яка жила, творила, любила, мріяла і залишила після себе слова, образи та світло. Тут зібрано його життєвий шлях, фотографії, вірші, малюнки, картини та незавершені твори.
-          </div>
-          <div class="btn-row">
-            <a class="btn primary" href="#works">Переглянути творчість</a>
-            <a class="btn" href="#about">Читати історію життя</a>
-          </div>
-        </div>
-        <div class="card hero-side">
-          <!-- Заміни цей блок на фото, наприклад:
-          <img src="images/hero.jpg" alt="[Ім'я брата]" />
-          -->
-          <div class="hero-placeholder">Головне фото<br />[Ім'я брата]</div>
-        </div>
+    <div class="hero-image">
+        <img src="images/main.png" alt="Максим Михайленко">
+        <div class="hero-quote">
+        <p>
+            В тяжку годину люди все більше переходять із прози на вірші.<br>
+            Недаремно гадають, що рима старіша за просто розмову.<br>
+            Бо ти можеш кричати, стогнати, римувати –<br>
+            інакше відніме мову.<br><br>
+            Бо не можеш вже більше вигнати тугу і біль із душі,<br>
+            бо душа твоя більше особисто тобі не належить.<br><br>
+            Бо змішалося все: сльози, вибухи, сміх, вірність,
+            гнів і любов.<br>
+            І надія. І нежить.
+        </p>
+
+    </div>
+    </div>
+
+    <div class="hero-content container">
+        <h1>Максим Михайленко • позивний Salva • 1977 - 2024</h1>
+        <p class="subtitle">
+            Поет • Художник • Письменник
+        </p>
+    </div>
+</section>
+
+<section id="featured-poems" class="featured-poems">
+  <div class="container">
+    <div class="section-head">
+      <h2>Вірші</h2>
+    </div>
+
+    <div class="poem-carousel">
+      <button class="poem-btn" id="prevPoems">←</button>
+
+      <div class="poem-pair">
+        <article class="card poem-card">
+          <h3 id="poemTitle1"></h3>
+          <div id="poemText1" class="poem-text"></div>
+        </article>
+
+        <article class="card poem-card">
+          <h3 id="poemTitle2"></h3>
+          <div id="poemText2" class="poem-text"></div>
+        </article>
       </div>
-    </section>
+
+      <button class="poem-btn" id="nextPoems">→</button>
+    </div>
+  </div>
+</section>
+
+<script src="js/poems.js"></script>
+<script src="js/poem-carousel.js"></script>
 
     <section id="about">
       <div class="container">
         <div class="section-head">
-          <h2>Про нього</h2>
-          <p>Короткий нарис про людину, її характер, цінності, талант і шлях.</p>
-        </div>
+          <h2>Про Максима</h2>
+        </div>  
+
         <div class="card story">
           <p>
-            [Тут можна розмістити основний текст про брата: де народився, яким був у дитинстві, що любив, що його формувало, чим захоплювався, як прийшов до поезії, малювання чи прози, як жив, працював, служив, яким його пам'ятають рідні та друзі.]
+            Максим Михайленко (1977–2024) — український поет, художник, письменник, інженер та воїн. 
           </p>
           <p>
-            [У цьому блоці добре працює не суха біографія, а жива розповідь: 6–12 абзаців із важливими етапами життя, спогадами, рисами характеру, його голосом через цитати з листів, віршів або записників.]
+            Народився в Луганську, де пройшли його дитинство і молодість. З ранніх років захоплювався літературою, музикою та малюванням. Працював у сфері телекомунікацій, створив родину, виховував двох дітей.<br />
+            Під час Революції Гідності був активним учасником Луганського Євромайдану. <br/> Після окупації рідного міста разом із сім’єю переїхав до Чернігова, який став його другою домівкою.
+          </p> 
+          <p>
+            Восени 2023 року вступив до лав Збройних Сил України. Служив у медичній роті евакуаційної бригади та рятував життя побратимів.<br/>
+            Загинув 29 березня 2024 року, захищаючи Україну на рідній Луганщині.
+          </p>  
+          <p>На цьому сайті зібрано його вірші, картини, рукописи, фотографії та спогади про людину, яка залишила по собі світло, <br/>
+            творчість і любов до України.
           </p>
-          <div class="quote">
-            «Тут можна винести один короткий віршований рядок, цитату або думку, яка дуже точно передає його внутрішній світ». 
-          </div>
         </div>
       </div>
     </section>
 
-    <section id="timeline">
-      <div class="container">
-        <div class="section-head">
-          <h2>Життєвий шлях</h2>
-          <p>Ключові дати та етапи, які можна заповнити поступово.</p>
-        </div>
-        <div class="timeline">
-          <div class="card timeline-item">
-            <div class="timeline-date">[Рік / дата]</div>
-            <div>
-              <strong>Народження / дитинство</strong><br />
-              [Короткий опис важливої події або періоду.] 
-            </div>
-          </div>
-          <div class="card timeline-item">
-            <div class="timeline-date">[Рік / дата]</div>
-            <div>
-              <strong>Початок творчого шляху</strong><br />
-              [Коли почав писати, малювати, створювати власні тексти чи образи.] 
-            </div>
-          </div>
-          <div class="card timeline-item">
-            <div class="timeline-date">[Рік / дата]</div>
-            <div>
-              <strong>Важливий життєвий етап</strong><br />
-              [Навчання, робота, родина, друзі, проєкти, захоплення.] 
-            </div>
-          </div>
-          <div class="card timeline-item">
-            <div class="timeline-date">[Рік / дата]</div>
-            <div>
-              <strong>Служба / війна</strong><br />
-              [Лаконічний, гідний опис цього періоду без зайвого пафосу — з повагою та людяністю.] 
-            </div>
-          </div>
-          <div class="card timeline-item">
-            <div class="timeline-date">[Рік / дата]</div>
-            <div>
-              <strong>Пам'ять</strong><br />
-              [Ким він залишився для рідних, друзів, читачів і тих, хто відкриє цю сторінку.] 
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <section id="works">
       <div class="container">
         <div class="section-head">
           <h2>Творчий доробок</h2>
-          <p>Сайт можна наповнювати поступово: від кількох текстів і фото до повного цифрового архіву.</p>
+          <div class="card story">
+            <p>Максим автор збірки поєзій "Я буду твоїм свідком" як складається більш ніж 100 віршів. <br/>
+              Здійснив віршований переклад з давньоскандинавської мови першої пісні Старшої Едди "Віщування Вьольви" (Völuspá).<br/>
+              Автор декількох недописаних романів, повістей і оповідань, а також десятнків малюнків і картин. <br/>
+            </p>
+          </div>
         </div>
         <div class="grid-2">
           <article class="card work-card">
@@ -454,12 +125,7 @@
               <li><a href="#">Добірка вибраних віршів</a></li>
               <li><a href="#">Чернетки та рукописи</a></li>
             </ul>
-            <div class="poem">Назва вірша
 
-Тут може бути один повний вірш
-або короткий уривок,
-щоб людина, яка перейде за QR-кодом,
-відразу відчула його голос.</div>
           </article>
 
           <article class="card work-card">
@@ -512,23 +178,6 @@
       </div>
     </section>
 
-    <section id="memory">
-      <div class="container">
-        <div class="section-head">
-          <h2>Пам'ять</h2>
-          <p>Цей розділ можна зробити дуже камерним і людяним.</p>
-        </div>
-        <div class="card story">
-          <p>
-            [Тут можна написати кілька слів від родини. Наприклад: чому створено цей сайт, що ви хочете зберегти, чому важливо, щоб його голос і творчість жили далі.]
-          </p>
-          <p class="small">
-            Для QR-коду на пам'ятнику найкраще використовувати коротке постійне посилання, наприклад: <strong>4wel.net/[slug]</strong>
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
 
   <footer class="footer">
     <div class="container">

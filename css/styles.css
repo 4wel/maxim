@@ -1,4 +1,4 @@
-    :root {
+:root {
       --bg: #bababa;
       --surface: #ffffff;
       --text: #1f2937;
@@ -104,7 +104,6 @@
     font-family: 'Georgia', serif;
     font-size: 18px;
 }
-
     .eyebrow {
       display: inline-block;
       padding: 6px 12px;
@@ -146,7 +145,6 @@
       text-shadow: 0 2px 12px rgba(0,0,0,0.8);
       z-index: 3;
 }
-
     .hero-side {
       overflow: hidden;
       min-height: 420px;
@@ -197,6 +195,9 @@
 
     .story {
       padding: 30px;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 18px;
+      line-height: 1.9;
     }
 
     .story p { margin-top: 0; }
@@ -356,8 +357,8 @@
     }
 
     .featured-poems {
-  padding: 60px 0 30px;
-}
+  padding: 10px 0 30px;
+  }
 
 .poem-carousel {
   display: grid;
@@ -367,12 +368,13 @@
 }
 
 .poem-pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
+  display: flex;
+  justify-content: center;
 }
 
 .poem-card {
+  max-width: 800px;
+  width: 100%;
   padding: 28px;
   min-height: 420px;
 }
@@ -391,14 +393,59 @@
   line-height: 1.75;
 }
 
+.poem-nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+
+    margin-top: 32px;
+}
+
 .poem-btn {
-  border: 1px solid var(--line);
-  background: white;
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 22px;
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid var(--line);
+    border-radius: 50%;
+
+    background: white;
+    color: var(--muted);
+    
+    cursor: pointer;
+
+    font-size: 20px;
+}
+
+.poem-random-btn {
+    height: 48px;
+    padding: 0 24px;
+
+    border: 1px solid var(--line);
+    border-radius: 999px;
+
+    background: white;
+
+    color: var(--muted);
+    font-size: 14px;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.poem-btn:hover,
+.poem-random-btn:hover {
+    box-shadow: var(--shadow);
+    color: var(--text);
+}
+
+.poem-counter {
+  margin-bottom: 10px;
+
+  color: rgba(107, 114, 128, 0.5);
+  font-size: 12px;
+
+  text-align: left;
 }
 
 @media (max-width: 800px) {

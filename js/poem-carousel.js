@@ -1,32 +1,65 @@
 let currentIndex = 0;
 
-const title1 = document.getElementById("poemTitle1");
-const text1 = document.getElementById("poemText1");
-const title2 = document.getElementById("poemTitle2");
-const text2 = document.getElementById("poemText2");
+const title = document.getElementById("poemTitle");
+const text = document.getElementById("poemText");
+const counter = document.getElementById("poemCounter");
 
 function renderPoems() {
-  const poem1 = poems[currentIndex];
-  const poem2 = poems[currentIndex + 1] || poems[0];
+  if (!poems || poems.length === 0) {
+    title.textContent = "Вірші відсутні";
+    text.textContent = "";
+    counter.textContent = "";
+    return;
+  }
 
-  title1.textContent = poem1.title;
-  text1.textContent = poem1.text;
+  const poem = poems[currentIndex];
 
-  title2.textContent = poem2.title;
-  text2.textContent = poem2.text;
+  title.textContent = poem.title;
+  text.textContent = poem.text;
+
+  counter.textContent =
+     `${currentIndex + 1} / ${poems.length}`;
 }
 
 document.getElementById("nextPoems").addEventListener("click", () => {
-  currentIndex = (currentIndex + 2) % poems.length;
+  currentIndex = (currentIndex + 1) % poems.length;
   renderPoems();
+  scrollToPoem();
 });
 
 document.getElementById("prevPoems").addEventListener("click", () => {
-  currentIndex = currentIndex - 2;
+  currentIndex--;
   if (currentIndex < 0) {
-    currentIndex = poems.length - 2;
+    currentIndex = poems.length - 1;
   }
   renderPoems();
+  scrollToPoem();
 });
+
+document.getElementById("randomPoem").addEventListener("click", () => {
+  let randomIndex;
+
+  do {
+    randomIndex = Math.floor(Math.random() * poems.length);
+  } while (randomIndex === currentIndex && poems.length > 1);
+
+  currentIndex = randomIndex;
+  renderPoems();
+  scrollToPoem();
+});
+
+function scrollToPoem() {
+  const poemCard = document.getElementById("poemCard");
+
+  const y =
+    poemCard.getBoundingClientRect().top +
+    window.pageYOffset -
+    90;
+
+  window.scrollTo({
+    top: y,
+    behavior: "smooth"
+  });
+}
 
 renderPoems();

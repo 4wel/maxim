@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Максим Михайленко</title>
   <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <meta name="description" content="Меморіальний сайт про життя, творчість і пам'ять [Максим Михайленко]." />
   
@@ -17,66 +18,72 @@
         <a href="#timeline">Життєвий шлях</a>
         <a href="#works">Творчість</a>
         <a href="#gallery">Світлини</a>
-              </nav>
+      </nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
-    <div class="hero-image">
+      <div class="hero-image">
         <img src="images/main.png" alt="Максим Михайленко">
         <div class="hero-quote">
-        <p>
-            В тяжку годину люди все більше переходять із прози на вірші.<br>
-            Недаремно гадають, що рима старіша за просто розмову.<br>
-            Бо ти можеш кричати, стогнати, римувати –<br>
-            інакше відніме мову.<br><br>
-            Бо не можеш вже більше вигнати тугу і біль із душі,<br>
-            бо душа твоя більше особисто тобі не належить.<br><br>
-            Бо змішалося все: сльози, вибухи, сміх, вірність,
-            гнів і любов.<br>
-            І надія. І нежить.
-        </p>
-
-    </div>
-    </div>
-
-    <div class="hero-content container">
-        <h1>Максим Михайленко • позивний Salva • 1977 - 2024</h1>
-        <p class="subtitle">
-            Поет • Художник • Письменник
-        </p>
-    </div>
-</section>
-
-<section id="featured-poems" class="featured-poems">
-  <div class="container">
-    <div class="section-head">
-      <h2>Вірші</h2>
-    </div>
-
-    <div class="poem-carousel">
-      <button class="poem-btn" id="prevPoems">←</button>
-
-      <div class="poem-pair">
-        <article class="card poem-card">
-          <h3 id="poemTitle1"></h3>
-          <div id="poemText1" class="poem-text"></div>
-        </article>
-
-        <article class="card poem-card">
-          <h3 id="poemTitle2"></h3>
-          <div id="poemText2" class="poem-text"></div>
-        </article>
+          <p>
+              В тяжку годину люди все більше переходять із прози на вірші.<br>
+              Недаремно гадають, що рима старіша за просто розмову.<br>
+              Бо ти можеш кричати, стогнати, римувати –<br>
+              інакше відніме мову.<br><br>
+              Бо не можеш вже більше вигнати тугу і біль із душі,<br>
+              бо душа твоя більше особисто тобі не належить.<br><br>
+              Бо змішалося все: сльози, вибухи, сміх, вірність,
+              гнів і любов.<br>
+              І надія. І нежить.
+          </p>
+        </div>
       </div>
 
-      <button class="poem-btn" id="nextPoems">→</button>
-    </div>
-  </div>
-</section>
+      <div class="hero-content container">
+          <h1>Максим Михайленко • позивний Salva • 1977 - 2024</h1>
+          <p class="subtitle">
+              Поет • Художник • Письменник
+          </p>
+      </div>
+    </section>
 
-<script src="js/poems.js"></script>
-<script src="js/poem-carousel.js"></script>
+     <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>          
+            На цьому сайті зібрано вірші, картини, рукописи, фотографії Максима як спогади про людину,<br>яка залишила по собі світло, творчість і любов до України.
+          </h2>
+        </div>  
+      </div>
+    </section>
+
+    <section id="featured-poems" class="featured-poems">
+      <div class="container">
+        <div class="section-head">
+          <h2>Обрані вірші</h2>
+        </div>
+
+        <div class="poem-pair">
+          <article class="card poem-card" id="poemCard">
+            <h3 id="poemTitle"></h3>
+            <div id="poemCounter" class="poem-counter"></div>
+            <div id="poemText" class="poem-text"></div>
+
+            <div class="poem-nav">
+              <button class="poem-btn" id="prevPoems">‹</button>
+
+              <button class="poem-random-btn" id="randomPoem">
+                ✦ Випадковий вірш ✦
+              </button>
+
+              <button class="poem-btn" id="nextPoems">›</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <section id="about">
       <div class="container">
@@ -96,26 +103,23 @@
             Восени 2023 року вступив до лав Збройних Сил України. Служив у медичній роті евакуаційної бригади та рятував життя побратимів.<br/>
             Загинув 29 березня 2024 року, захищаючи Україну на рідній Луганщині.
           </p>  
-          <p>На цьому сайті зібрано його вірші, картини, рукописи, фотографії та спогади про людину, яка залишила по собі світло, <br/>
-            творчість і любов до України.
-          </p>
         </div>
       </div>
     </section>
-
-    
 
     <section id="works">
       <div class="container">
         <div class="section-head">
           <h2>Творчий доробок</h2>
-          <div class="card story">
-            <p>Максим автор збірки поєзій "Я буду твоїм свідком" як складається більш ніж 100 віршів. <br/>
-              Здійснив віршований переклад з давньоскандинавської мови першої пісні Старшої Едди "Віщування Вьольви" (Völuspá).<br/>
-              Автор декількох недописаних романів, повістей і оповідань, а також десятнків малюнків і картин. <br/>
-            </p>
-          </div>
+        </div>  
+        
+        <div class="card story">
+          <p>Максим — автор збірки поезій «Я буду твоїм свідком», яка налічує понад 100 віршів.<br/>
+            Здійснив віршований переклад з давньоскандинавської мови першої пісні Старшої Едди "Віщування Вьольви" (Völuspá).<br/>
+            Автор декількох недописаних романів, повістей і оповідань, а також десятнків малюнків і картин. <br/>
+          </p>
         </div>
+        
         <div class="grid-2">
           <article class="card work-card">
             <h3>Вірші</h3>
@@ -125,67 +129,24 @@
               <li><a href="#">Добірка вибраних віршів</a></li>
               <li><a href="#">Чернетки та рукописи</a></li>
             </ul>
-
-          </article>
-
-          <article class="card work-card">
-            <h3>Проза та недописані романи</h3>
-            <p>Для незавершених текстів добре підійде окремий розділ із поясненням контексту.</p>
-            <ul>
-              <li><a href="#">Роман 1 — уривки</a></li>
-              <li><a href="#">Роман 2 — нотатки та чернетки</a></li>
-              <li><a href="#">Ідеї, плани, записи</a></li>
-            </ul>
-          </article>
-
-          <article class="card work-card">
-            <h3>Картини та малюнки</h3>
-            <p>Можна зробити галерею з короткими підписами: рік, техніка, історія створення.</p>
-            <ul>
-              <li><a href="#gallery">Галерея робіт</a></li>
-              <li><a href="#">Серії малюнків</a></li>
-              <li><a href="#">Оцифровані скани</a></li>
-            </ul>
-          </article>
-
-          <article class="card work-card">
-            <h3>Архів матеріалів</h3>
-            <p>Сюди можна додати інтерв'ю, листи, спогади друзів, аудіо, відео, публікації.</p>
-            <ul>
-              <li><a href="#">Спогади близьких</a></li>
-              <li><a href="#">Аудіозаписи</a></li>
-              <li><a href="#">Відео / читання віршів</a></li>
-            </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="gallery">
-      <div class="container">
-        <div class="section-head">
-          <h2>Світлини та роботи</h2>
-          <p>Тут можуть бути фото з життя, портрети, картини, малюнки, сторінки рукописів.</p>
-        </div>
-        <div class="gallery">
-          <div class="gallery-item">Фото 1 / картина</div>
-          <div class="gallery-item">Фото 2 / малюнок</div>
-          <div class="gallery-item">Фото 3 / рукопис</div>
-          <div class="gallery-item">Фото 4</div>
-          <div class="gallery-item">Фото 5</div>
-          <div class="gallery-item">Фото 6</div>
-        </div>
-      </div>
-    </section>
+
+</main>    
 
 
-  <footer class="footer">
-    <div class="container">
-      <div class="card footer-box">
-        <strong>Світла пам'ять [Ім'я брата]</strong><br />
-        Цей сайт створено, щоб зберегти пам'ять про його життя, творчість і шлях.
-      </div>
+<footer class="footer">
+  <div class="container">
+    <div class="card footer-box">
+      <strong>Світла пам'ять</strong><br />
     </div>
-  </footer>
+  </div>
+</footer>
+
+<script src="js/poems.js"></script>
+<script src="js/poem-carousel.js"></script>
 </body>
 </html>
